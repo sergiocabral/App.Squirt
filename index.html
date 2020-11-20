@@ -124,7 +124,7 @@
                 var localExecution = location.href.indexOf('file://') === 0;
                 var version = "v0.0.0";
                 if (!localExecution) {
-                    var response = await fetch("VERSION");
+                    var response = await fetch(location.pathname + "/VERSION");
                     var text = await response.text();
                     version = text.trim().replace("#BUILD#", "x");
                 }
